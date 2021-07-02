@@ -1,5 +1,7 @@
 # DWM-PERDITION
 
+[Preview](./preview.png)
+
 Dwm is an extremely fast, small, and dynamic window manager for X. Dwm is created by the suckless guys.  This is my personal build of dwm.  I applied a number of patches to make dwm more "reliable" rather than "suckless". 
 
 ## Patches used in this build:
