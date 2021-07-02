@@ -26,11 +26,12 @@ Here is the list of dependencies that you should consider installing.
 ## Running dwm:
 
 If you use a login manager (such as lightdm or sddm) you have to create a file called `dwm.desktop` in `usr/share/xsessions` directory. It should looke like this:
-	[Desktop Entry]
-	Encoding=UTF-8
-	Name=Dwm
-	Comment=Dynamic window manager
-	Exec=dwm
-	Icon=dwm
-	Type=XSession
-
+```bash
+[Desktop Entry]
+Encoding=UTF-8
+Name=Dwm
+Comment=Dynamic window manager
+Exec=dwm
+Icon=dwm
+Type=XSession
+```
