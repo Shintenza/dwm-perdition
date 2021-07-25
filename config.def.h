@@ -54,7 +54,7 @@ static const Rule rules[] = {
 	/* class     		instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "discord",    	NULL,     NULL,           1 << 2,    0,          0,           0,        -1 },
 	{ "code-oss",   	NULL,     NULL,           1 << 3,    0,          0,           0,        -1 },
-	{ "alacritty",  	NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ "Alacritty",  	NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ "Brave-browser",	NULL,     NULL,           1 << 1,    0,          1,           0,        -1 },
 	{ "Spotify",		NULL,     NULL,           1 << 4,    0,          1,           0,        -1 },
 	{ NULL,      		NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
@@ -63,7 +63,7 @@ static const Rule rules[] = {
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
 #include "vanitygaps.c"
@@ -171,11 +171,11 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Print,  spawn,           SHCMD("io.elementary.screenshot-tool") },
 	{ MODKEY,             			XK_p, 	   spawn,          	SHCMD("passmenu -p 'Search: '") }, 
 
-	{ 0,             				XF86XK_AudioMute,    		spawn,   SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+5 dwmblocks") },
-	{ 0,             				XF86XK_AudioLowerVolume,    spawn,   SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -10%; pkill -RTMIN+5 dwmblocks") },
-	{ 0,             				XF86XK_AudioRaiseVolume,    spawn,   SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +10%; pkill -RTMIN+5 dwmblocks") },
-	{ 0,             				XF86XK_MonBrightnessDown,   spawn,   SHCMD("xbacklight -dec 10; pkill -RTMIN+6 dwmblocks") },
-	{ 0,             				XF86XK_MonBrightnessUp,    	spawn,   SHCMD("xbacklight -inc 10; pkill -RTMIN+6 dwmblocks") },
+	{ 0,             				XF86XK_AudioMute,    		spawn,   SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+6 dwmblocks") },
+	{ 0,             				XF86XK_AudioLowerVolume,    spawn,   SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -10%; pkill -RTMIN+6 dwmblocks") },
+	{ 0,             				XF86XK_AudioRaiseVolume,    spawn,   SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +10%; pkill -RTMIN+6 dwmblocks") },
+	{ 0,             				XF86XK_MonBrightnessDown,   spawn,   SHCMD("xbacklight -dec 10; pkill -RTMIN+7 dwmblocks") },
+	{ 0,             				XF86XK_MonBrightnessUp,    	spawn,   SHCMD("xbacklight -inc 10; pkill -RTMIN+7 dwmblocks") },
 	{ 0,             				XF86XK_AudioPlay ,    		spawn,   SHCMD("playerctl play-pause") },
 	{ 0,             				XF86XK_AudioNext,    		spawn,   SHCMD("playerctl next") },
 	{ 0,             				XF86XK_AudioPrev,    		spawn,   SHCMD("playerctl previous") },
