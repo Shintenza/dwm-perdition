@@ -58,6 +58,7 @@ static const Rule rules[] = {
 	{ "Brave-browser",	NULL,     NULL,           1 << 1,    0,          1,           0,        -1 },
 	{ "Spotify",		NULL,     NULL,           1 << 4,    0,          1,           0,        -1 },
 	{ NULL,      		NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+    { NULL,             NULL,     "Powiadomienie w aplikacji Microsoft Teams",        0, 1,0,0, -1 },
 };
 
 /* layout(s) */
@@ -168,7 +169,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_v,      spawn,      		SHCMD("code")},
 	{ MODKEY|ShiftMask,             XK_t,      spawn,      		SHCMD("thunar")},
 	{ MODKEY,             			XK_Print,  spawn,           SHCMD("scrot ~/Pictures/screenshot-$(date +%F_%T).png") }, 
-	{ MODKEY|ShiftMask,             XK_Print,  spawn,           SHCMD("scrot -s -e 'xclip -selection clipboard -t image/png -i $f'") },
+	{ MODKEY|ShiftMask,             XK_Print,  spawn,           SHCMD("escrotum -s -C") },
 	{ MODKEY,             			XK_p, 	   spawn,          	SHCMD("passmenu -p 'Search: '") }, 
 
 	{ 0,             				XF86XK_AudioMute,    		spawn,   SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+6 dwmblocks") },
