@@ -164,6 +164,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_b,      spawn,      		SHCMD("brave")},
 	{ MODKEY|ShiftMask,             XK_f,      spawn,      		SHCMD("alacritty -e ranger")},
 	{ MODKEY|ShiftMask,             XK_g,      spawn,      		SHCMD("steam")},
+	{ MODKEY|ShiftMask,             XK_m,      spawn,      		SHCMD("geary")},
 	{ MODKEY|ShiftMask,             XK_d,      spawn,      		SHCMD("discord")},
 	{ MODKEY|ShiftMask,             XK_s,      spawn,      		SHCMD("spotify")},
 	{ MODKEY|ShiftMask,             XK_v,      spawn,      		SHCMD("code")},
