@@ -171,7 +171,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_v,      spawn,      		SHCMD("code")},
 	{ MODKEY|ShiftMask,             XK_t,      spawn,      		SHCMD("thunar")},
 	{ MODKEY,             			XK_Print,  spawn,           SHCMD("scrot ~/Pictures/screenshot-$(date +%F_%T).png") }, 
-	{ MODKEY|ShiftMask,             XK_Print,  spawn,           SHCMD("escrotum -s -C") },
+	{ MODKEY|ShiftMask,             XK_Print,  spawn,           SHCMD("ssc") },
 	{ MODKEY,             			XK_p, 	   spawn,          	SHCMD("passmenu -p 'Search: '") }, 
 
 	{ 0,             				XF86XK_AudioMute,    		spawn,   SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+6 dwmblocks") },
