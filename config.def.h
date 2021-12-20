@@ -55,10 +55,12 @@ static const Rule rules[] = {
 	{ "discord",    	NULL,     NULL,           1 << 2,    0,          0,           0,        -1 },
 	{ "code-oss",   	NULL,     NULL,           1 << 3,    0,          0,           0,        -1 },
 	{ "Alacritty",  	NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ "Brave-browser",	NULL,     NULL,           1 << 1,    0,          1,           0,        -1 },
-	{ "Spotify",		NULL,     NULL,           1 << 4,    0,          1,           0,        -1 },
+	{ "Brave-browser",	NULL,     NULL,           1 << 1,    0,          0,           0,        -1 },
+	{ "firefox",	    NULL,     NULL,           1 << 1,    0,          0,           0,        -1 },
+	{ "Spotify",		NULL,     NULL,           1 << 4,    0,          0,           0,        -1 },
 	{ NULL,      		NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
     { NULL,             NULL,     "Powiadomienie w aplikacji Microsoft Teams",        0, 1,0,0, -1 },
+	{ NULL,	            NULL,     "Picture-in-Picture",           1 << 1,    1,          0,           0,        -1 },
 };
 
 /* layout(s) */
@@ -103,11 +105,13 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-p", "Run: " }; 
 static const char *termcmd[]  = { "alacritty", NULL };
+static const char *st_term[]  = { "st", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,             			XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = st_term } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
@@ -162,7 +166,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
 
-	{ MODKEY|ShiftMask,             XK_b,      spawn,      		SHCMD("brave")},
+	{ MODKEY|ShiftMask,             XK_b,      spawn,      		SHCMD("firefox")},
 	{ MODKEY|ShiftMask,             XK_f,      spawn,      		SHCMD("alacritty -e ranger")},
 	{ MODKEY|ShiftMask,             XK_g,      spawn,      		SHCMD("steam")},
 	{ MODKEY|ShiftMask,             XK_m,      spawn,      		SHCMD("geary")},
