@@ -5,16 +5,16 @@
 Dwm is an extremely fast, small, and dynamic window manager for X. Dwm is created by the suckless guys.  This is my personal build of dwm.  I applied a number of patches to make dwm more "reliable" rather than "suckless". 
 
 ## Patches used in this build:
-- alwayscenter (makes centered dialog boxes)
+- center (makes centered dialog boxes)
 - attachaside (new windows appears in the stack rather than as the master)
 - autostart (looks for autostart.sh in ~/.dwm and runs that script after startup)
-- colorbar (gives you more options when it comes to the bar's color settings)
 - cyclelayoyts (gives you a keybinding to cycle through the avaliable layouts)
 - restartsig (ability to restart dwm without killing it)
 - rotatestack (moves the window through the stack)
 - swallow ([check here](https://www.youtube.com/watch?v=92uo5OBOKfY))
 - systray (displays systray)
 - vaniygaps (this patch applies gapps but also a number of layouts)
+- noborder (removes border when only window is active)
 
 ## Dependencies:
 
@@ -25,7 +25,7 @@ Here is the list of dependencies that you should consider installing.
 
 ## Running dwm:
 
-If you use a login manager (such as lightdm or sddm) you have to create a file called `dwm.desktop` in `usr/share/xsessions` directory. It should looke like this:
+If you use a login manager (such as lightdm or sddm) you have to create a file called `dwm.desktop` in `/usr/share/xsessions` directory. It should looke like this:
 ```bash
 [Desktop Entry]
 Encoding=UTF-8
