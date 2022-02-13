@@ -1,6 +1,5 @@
 /* See LICENSE file for copyright and license details. */
-#include <X11/XF86keysym.h>
-/* appearance */
+#include <X11/XF86keysym.h> /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappih    = 7;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 7;       /* vert inner gap between windows */
@@ -140,8 +139,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_s,      spawn,      		SHCMD("spotify")},
 	{ MODKEY|ShiftMask,             XK_v,      spawn,      		SHCMD("code")},
 	{ MODKEY|ShiftMask,             XK_t,      spawn,      		SHCMD("thunar")},
-	{ MODKEY,             			XK_Print,  spawn,           SHCMD("scrot ~/Pictures/screenshot-$(date +%F_%T).png") }, 
-	{ MODKEY|ShiftMask,             XK_Print,  spawn,           SHCMD("ssc") },
+	{ MODKEY,             			XK_Print,  spawn,           SHCMD("scrot ~/Pictures/screenshot-$(date +%F_%T).png")}, 
+	{ MODKEY|ShiftMask,             XK_Print,  spawn,           SHCMD("maim -s | xclip -selection clipboard -t image/png")},
 	{ MODKEY,             			XK_p, 	   spawn,          	SHCMD("passmenu -p 'Search: '") }, 
 
 	{ 0,             				XF86XK_AudioMute,    		spawn,   SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+6 dwmblocks") },
