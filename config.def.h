@@ -73,7 +73,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-p", "Run: " }; 
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-p", "Run: "};
+static const char *passmenu[] = { "passmenu", "-fn", dmenufont, "-p", "Search: "};
 static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
@@ -141,7 +142,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_t,      spawn,      		SHCMD("thunar")},
 	{ MODKEY,             			XK_Print,  spawn,           SHCMD("scrot ~/Pictures/screenshot-$(date +%F_%T).png")}, 
 	{ MODKEY|ShiftMask,             XK_Print,  spawn,           SHCMD("maim -s | xclip -selection clipboard -t image/png")},
-	{ MODKEY,             			XK_p, 	   spawn,          	SHCMD("passmenu -p 'Search: '") }, 
+	{ MODKEY,                       XK_p,      spawn,           {.v = passmenu } },
 
 	{ 0,             				XF86XK_AudioMute,    		spawn,   SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+6 dwmblocks") },
 	{ 0,             				XF86XK_AudioLowerVolume,    spawn,   SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -10%; pkill -RTMIN+6 dwmblocks") },
