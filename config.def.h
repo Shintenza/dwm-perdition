@@ -73,8 +73,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-p", "Run: "};
-static const char *passmenu[] = { "passmenu", "-fn", dmenufont, "-p", "Search: "};
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-p", "Run: ", "-F"};
+static const char *passmenu[] = { "passmenu", "-fn", dmenufont, "-p", "Search: ", "-F"};
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *alt_termcmd[]  = { "alacritty -o window.opacity=1 window.padding.x=0 window.padding.y=0 window.dynamic_padding=false", NULL };
 
